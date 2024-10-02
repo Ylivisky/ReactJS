@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
-import { getProducts } from '../asyncMock.js';
-import ProductCard from './ProductCard';
+import { getCategory } from '../../asyncMock';
+import { useParams } from 'react-router-dom';
+import ProductCard from '../../components/ProductCard';
 
-export default function ItemListContainer() {
+export default function Category(){
+    const { category } = useParams();
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        getProducts.then((data) => setProducts(data));
-    }, []);
+        setProducts(getCategory(category));
+    }, [category]);
 
     return (
         <>
@@ -17,6 +19,5 @@ export default function ItemListContainer() {
                 ))}
             </section>
         </>
-    );
-}
-
+    )
+};
