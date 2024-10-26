@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react';
-import { getProducts } from '../asyncMock.js';
+import { getProducts } from '../firebase/firebase'; // Asegúrate de importar desde Firebase
 import ProductCard from './ProductCard';
 
 export default function ItemListContainer() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        getProducts.then((data) => setProducts(data));
+        const fetchProducts = async () => {
+            const data = await getProducts(); // Llama a la función correctamente
+            setProducts(data);
+        };
+        fetchProducts();
     }, []);
 
     return (
@@ -19,4 +23,3 @@ export default function ItemListContainer() {
         </>
     );
 }
-
