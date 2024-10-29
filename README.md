@@ -1,8 +1,10 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# ReactJS Ecommerce - "CompraPC"
+## 
+### Realice todo lo pedido en el pdf sobre el proyecto final.
+1. Los productos son importados desde una base de datos en Firebase.
+2. Cree un contexto para el carrito
+3. Estan todas las rutas pedidas asignadas
+4. El checkout envia una orden a una coleccion llamada Orders en Firebase
+5. En el carrito se puede eliminar los productos por cantidad
+6. Los productos se separan por categoria dependiendo la seccion elegida en el navbar
+7. Utilice Bootstrap y Bootstrap-icon para decorar un poco la pagina

@@ -6,11 +6,7 @@ import {
     getDoc,
     getDocs,
     collection,
-    query,
-    where,
-    addDoc,
-    updateDoc,
-    writeBatch,
+    addDoc
 } from 'firebase/firestore';
 
 // Your web app's Firebase configuration

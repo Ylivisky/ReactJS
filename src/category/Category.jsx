@@ -18,15 +18,17 @@ export default function Category() {
 
     return (
         <>
-            <section style={{ display: 'flex', gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
-                {products.length > 0 ? (
-                    products.map((product) => (
-                        <ProductCard key={product.id} product={product} />
-                    ))
-                ) : (
-                    <p>No hay productos en esta categoría.</p>
-                )}
-            </section>
+            <main className='container mt-4' style={{ display: 'flex', flexWrap: "wrap", justifyContent: "center", alignItems: "center" }}>
+                <section className='row'>
+                    {products.length > 0 ? (
+                        products.map((product) => (
+                            <ProductCard key={product.id} product={product} />
+                        ))
+                    ) : (
+                        <p>No hay productos en esta categoría.</p>
+                    )}
+                </section>
+            </main>
         </>
     );
 }

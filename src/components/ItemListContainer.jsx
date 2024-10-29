@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getProducts } from '../firebase/firebase'; // Asegúrate de importar desde Firebase
+import { getProducts } from '../firebase/firebase';
 import ProductCard from './ProductCard';
 
 export default function ItemListContainer() {
@@ -7,7 +7,7 @@ export default function ItemListContainer() {
 
     useEffect(() => {
         const fetchProducts = async () => {
-            const data = await getProducts(); // Llama a la función correctamente
+            const data = await getProducts();
             setProducts(data);
         };
         fetchProducts();
@@ -15,11 +15,13 @@ export default function ItemListContainer() {
 
     return (
         <>
-            <section style={{ display: 'flex', gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
-                {products.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                ))}
-            </section>
+            <main className='container mt-4' style={{ display: 'flex', flexWrap: "wrap", justifyContent: "center", alignItems: "center" }}>
+                <section className='row'>
+                    {products.map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                    ))}
+                </section>
+            </main>
         </>
     );
 }

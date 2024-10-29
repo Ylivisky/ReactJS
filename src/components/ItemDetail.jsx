@@ -12,7 +12,7 @@ export default function ItemDetail() {
     useEffect(() => {
         const fetchProduct = async () => {
             const productDetail = await getSingleProduct(id);
-            setProduct(productDetail);
+            setProduct({...productDetail, id});
         };
         fetchProduct();
     }, [id]);

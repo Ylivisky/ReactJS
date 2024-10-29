@@ -1,4 +1,3 @@
-// src/components/Checkout.jsx
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { sendOrder } from '../firebase/firebase';
@@ -12,7 +11,7 @@ export default function Checkout() {
         email: '',
         confirmEmail: ''
     });
-    const [orderId, setOrderId] = useState(null); // Para almacenar el ID de la orden
+    const [orderId, setOrderId] = useState(null);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -35,9 +34,9 @@ export default function Checkout() {
         };
 
         try {
-            const id = await sendOrder(order); // Enviar la orden y obtener el ID
-            setOrderId(id); // Guardar el ID de la orden
-            clearCart(); // Limpiar el carrito después de la compra
+            const id = await sendOrder(order); 
+            setOrderId(id); 
+            clearCart(); 
         } catch (error) {
             console.error("Error al enviar la orden: ", error);
         }
@@ -48,8 +47,8 @@ export default function Checkout() {
             <h2>Checkout</h2>
             {orderId ? (
                 <div>
-                    <h3>Gracias por tu compra!</h3>
-                    <p>Tu número de orden es: <strong>{orderId}</strong></p>
+                    <h3 className='alert alert-success'>Gracias por tu compra!</h3>
+                    <p className='alert alert-light'>Tu número de orden es: <strong>{orderId}</strong></p>
                 </div>
             ) : (
                 <>

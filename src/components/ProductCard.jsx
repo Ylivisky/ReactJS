@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom';
 export default function ProductCard({ product }) {
     return (
         <>
-            <article style={{ border: '1px solid white', padding: 10 }}>
-                <h2>{product.name}</h2>
-                <img style={{width: "450px", height:"450px"}} src={product.image} alt={product.name} />
-                <p>$ {product.price}</p>
-                <button>
-                    <Link className='nav-link' to={`/item/${product.id}`}>More Details</Link>
-                </button>
-            </article>
+            <div class="col-md-4 ">
+                <div class="card mb-5 p-0">
+                    <img style={{width: "400px", height:"400px", margin:"0 auto"}} src={product.image} class="card-img-top" alt={product.name} />
+                    <div class="card-body">
+                        <h5 class="card-title">{product.name}</h5>
+                        <button>
+                            <Link className='nav-link' to={`/item/${product.id}`}>More Details</Link>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </>
     );
 }
